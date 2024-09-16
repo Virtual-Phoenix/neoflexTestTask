@@ -12,6 +12,8 @@ public class VacationUtil {
         date = new GregorianCalendar(year, month, year);
     }
 
+    public long getDiffOfDaysVacation()
+
 
 
 

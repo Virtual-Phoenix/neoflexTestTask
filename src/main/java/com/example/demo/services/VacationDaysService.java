@@ -26,9 +26,9 @@ public class VacationDaysService {
     }
 
 
-    boolean isNotHoliday(LocalDate date) {
+    public boolean isNotHoliday(LocalDate date) {
         for (int i = 0; i < VacationUtil.dates.length; i++) {
-            if (date.getDayOfWeek() == VacationUtil.dates[i].getDayOfWeek() &&
+            if (date.getDayOfMonth() == VacationUtil.dates[i].getDayOfMonth() &&
                     date.getMonth() == VacationUtil.dates[i].getMonth()) {
                 return false;
             }
@@ -39,7 +39,7 @@ public class VacationDaysService {
     public int calcVacationDays(LocalDate startDate, LocalDate endDate) {
         int vacationDays = 0;
 
-        for (LocalDate date = startDate; date.isBefore(endDate); date = date.plusDays(1)) {
+        for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
             if (date.getDayOfWeek() != DayOfWeek.SATURDAY &&
                     date.getDayOfWeek() != DayOfWeek.SUNDAY &&
                     isNotHoliday(date)) {

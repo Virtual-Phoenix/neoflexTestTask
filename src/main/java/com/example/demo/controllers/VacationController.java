@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.Month;
 
 @RestController
 @AllArgsConstructor
@@ -26,8 +24,10 @@ public class VacationController {
     }
 
     @GetMapping("/calculate/specific-dates")
-    Month getSpecificVacationPay(@RequestBody VacationDate vacationDate){
-        return vacationDate.startDate.getMonth();
+    BigDecimal getSpecificVacationPay(@RequestBody VacationDate vacationDate) {
+        return vacationDaysService.calcVacationPayForSpecificDays(vacationDate.avgSalary,
+                vacationDate.startDate,
+                vacationDate.endDate);
     }
 
 

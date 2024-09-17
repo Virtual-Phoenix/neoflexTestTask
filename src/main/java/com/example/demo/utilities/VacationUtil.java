@@ -7,11 +7,11 @@ public class VacationUtil {
 
     public static LocalDate[] dates = {
             LocalDate.of(2000, 1, 1),
-            LocalDate.of(2000,1,2),
+            LocalDate.of(2000, 1, 2),
             LocalDate.of(2000, 1, 3),
-            LocalDate.of(2000,1,4),
+            LocalDate.of(2000, 1, 4),
             LocalDate.of(2000, 1, 5),
-            LocalDate.of(2000,1,6),
+            LocalDate.of(2000, 1, 6),
             LocalDate.of(2000, 1, 7),
             LocalDate.of(2000, 1, 8),
             LocalDate.of(2000, 2, 23),

@@ -76,7 +76,7 @@ class VacationDaysServiceTest {
     }
 
     @Test
-    void calcVacationPayForSpecificDays(){
+    void calcVacationPayForSpecificDays() {
         BigDecimal val = vacationDaysService.calcVacationPayForSpecificDays(
                 new BigDecimal(100000),
                 LocalDate.of(2024, 7, 1),
